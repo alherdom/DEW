@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="mytxt">Aprende JavaScript con MyFPSchool!</p>
+    <p id="1">El número atómico del litio es 17</p>
+    <button type="button" onclick="verdadero(id)">Verdadero</button>
+    <button type="button" onclick="falso(id)">Falso</button>
+    <p>La caja negra de un avión es negra.</p>
+    <button type="button" onclick="myFunction()">Verdadero</button>
+    <button type="button" onclick="myFunction()">Falso</button>
+    <p>La acrofobia es el miedo al ajo. Verdadero.</p>
+    <button type="button" onclick="myFunction()">Verdadero</button>
+    <button type="button" onclick="myFunction()">Falso</button>
+
+    <script>
+        function myFunction() {
+        var x = document.getElementById("mytxt");
+        x.style.fontSize = "25px";
+        x.style.color = "red";
+                                }
+        function verdadero(x) {
+        var x = document.getElementById(x);
+            x.style.fontSize = "25px";
+            x.style.color = "green";
+        }
+        function falso() {
+        var x = document.getElementById(x);
+            x.style.fontSize = "25px";
+            x.style.color = "red";
+        }
+    </script>
+</body>
+</html>

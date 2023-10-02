@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cambio de imágenes con JavaScript</h1>
+    <img id="myFPImage" onclick="cambiaPic()"
+    src="http://myfpschool.com/wp-content/uploads/2016/06/myblack.jpeg"
+    width="200" height="180">
+    <p>Haz click sobre la imagen para cambiarla.</p>
+    <script>
+        function cambiaPic() {
+            var image = document.getElementById('myFPImage');
+                if (image.src.match("green")) {
+                    image.src ="http://myfpschool.com/wp-content/uploads/2016/06/myblack.jpeg";
+                        } 
+                else if  (image.src.match("base")) {
+                    image.src ="http://myfpschool.com/wp-content/uploads/2016/06/mygreen.jpeg";
+                    } else {
+                        image.src = "data:image/png;base64,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";
+                            }
+                            }
+    </script>
+</body>
+</html>
