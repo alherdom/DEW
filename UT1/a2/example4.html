@@ -1,41 +1,14 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Cuestionario</title>
-    <style>
-        .pregunta {
-            margin-bottom: 20px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
+<script src="script.js"></script>
 <body>
-    <h1>Cuestionario</h1>
-
-    <div class="pregunta">
-        <p>Pregunta 1: La Tierra es plana</p>
-        <button onclick="verificarRespuesta(true, 1)">Verdadero</button>
-        <button onclick="verificarRespuesta(false, 1)">Falso</button>
-    </div>
-
-    <div class="pregunta">
-        <p>Pregunta 2: El agua hierve a 100 grados Celsius a nivel del mar</p>
-        <button onclick="verificarRespuesta(true, 2)">Verdadero</button>
-        <button onclick="verificarRespuesta(false, 2)">Falso</button>
-    </div>
-
-    <script>
-        function verificarRespuesta(respuesta, pregunta) {
-            var preguntaDiv = document.getElementsByClassName("pregunta")[pregunta - 1];
-
-            if (respuesta) {
-                preguntaDiv.style.color = 'green';
-            } else {
-                preguntaDiv.style.color = 'red';
-            }
-        }
-    </script>
+    <p id="1">Pregunta1</p>
+    <button onclick="checkAnswer('True','1')">True</button>
+    <button onclick="checkAnswer('False','1')">True</button>
 </body>
-
 </html>
