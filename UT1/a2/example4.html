@@ -1,38 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cuestionario</title>
+    <style>
+        .pregunta {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
+
 <body>
-    <p id="mytxt">Aprende JavaScript con MyFPSchool!</p>
-    <p id="1">El número atómico del litio es 17</p>
-    <button type="button" onclick="verdadero(id)">Verdadero</button>
-    <button type="button" onclick="falso(id)">Falso</button>
-    <p>La caja negra de un avión es negra.</p>
-    <button type="button" onclick="myFunction()">Verdadero</button>
-    <button type="button" onclick="myFunction()">Falso</button>
-    <p>La acrofobia es el miedo al ajo. Verdadero.</p>
-    <button type="button" onclick="myFunction()">Verdadero</button>
-    <button type="button" onclick="myFunction()">Falso</button>
+    <h1>Cuestionario</h1>
+
+    <div class="pregunta">
+        <p>Pregunta 1: La Tierra es plana</p>
+        <button onclick="verificarRespuesta(true, 1)">Verdadero</button>
+        <button onclick="verificarRespuesta(false, 1)">Falso</button>
+    </div>
+
+    <div class="pregunta">
+        <p>Pregunta 2: El agua hierve a 100 grados Celsius a nivel del mar</p>
+        <button onclick="verificarRespuesta(true, 2)">Verdadero</button>
+        <button onclick="verificarRespuesta(false, 2)">Falso</button>
+    </div>
 
     <script>
-        function myFunction() {
-        var x = document.getElementById("mytxt");
-        x.style.fontSize = "25px";
-        x.style.color = "red";
-                                }
-        function verdadero(x) {
-        var x = document.getElementById(x);
-            x.style.fontSize = "25px";
-            x.style.color = "green";
-        }
-        function falso() {
-        var x = document.getElementById(x);
-            x.style.fontSize = "25px";
-            x.style.color = "red";
+        function verificarRespuesta(respuesta, pregunta) {
+            var preguntaDiv = document.getElementsByClassName("pregunta")[pregunta - 1];
+
+            if (respuesta) {
+                preguntaDiv.style.backgroundColor = 'green';
+            } else {
+                preguntaDiv.style.backgroundColor = 'red';
+            }
         }
     </script>
 </body>
+
 </html>
