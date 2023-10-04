@@ -5,7 +5,7 @@ function diAlgo()
 
 function checkAnswer(answer, id) {
     var question = document.getElementById(id);
-    if (answer == 'True') {
+    if (answer) {
         question.style.color = 'green';
     } else {
         question.style.color = 'red';
