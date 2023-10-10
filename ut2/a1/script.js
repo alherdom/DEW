@@ -34,7 +34,7 @@ function calculateTip() {
     // var percentage2 = parseFloat(document.getElementById('value').value)
     // Check if the radius is a valid number
     if (isNaN(bill) || (isNaN(percentage))) {
-    // if (isNaN(bill)) {
+        // if (isNaN(bill)) {
         // Display an error message if the bill or percentage is not a valid number
         window.alert("The bill or percentage is not a valid number");
     } else {
@@ -43,4 +43,23 @@ function calculateTip() {
         // Display the results in the HTML page
         document.getElementById('tip').innerHTML = tip.toFixed(2);
     }
+}
+
+function findDivisors() {
+    // Get the number from the 'number' input element and convert it to a floating-point number.
+    const number = parseFloat(document.getElementById('number').value);
+    // Create an empty array to store the divisors.
+    const divisors = [];
+    // Loop from 1 to the entered number to find divisors.
+    for (let i = 1; i <= number; i++) {
+        // Check if the current number is a divisor of the input number.
+        if (number % i === 0) {
+            // If it is a divisor, add it to the 'divisors' array.
+            divisors.push(i);
+        }
+    }
+    // Log the divisors to the console.
+    console.log(divisors);
+    // Display the divisors in the 'divisors' element on the HTML page.
+    document.getElementById('divisors').innerHTML = divisors;
 }

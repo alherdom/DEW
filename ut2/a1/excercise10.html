@@ -2,45 +2,46 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="style.css">
     <title>Rombo de emoticonos</title>
 </head>
 
 <body>
-
-    <input type="text" class="n_rows" onchange="dibujarRombo(n_rows)">Escoja el número de filas del rombo: </input><br>
-    <button>Calculate</button>
-    
-    <div id="rombo" style="text-align: center"></div>
+    <div class="calc">
+        <h1>Create a rhombus</h1>
+        <h4>Enter the number of rows for the rhombus:</h4>
+        <input id="n_rows" style="text-align: center; width: 290px;"
+            placeholder="Number of rows of the rhombus"><br><br>
+        <button onclick="dibujarRombo()">Generate</button><br><br>
+    </div>
+    <br>
+    <div id="rombo" style="text-align: center; color:#5840FF; font-size: 25px; font-weight: bolder;"></div>
 
     <script>
-        var n_rows = document.getElementById('n_rows').value;
+        function dibujarRombo() {
+            var filas = parseInt(document.getElementById('n_rows').value);
+            var output = '';
 
-        function dibujarRombo(filas) {
-
-            let output = '';
-
-            //Parte creciente del rombo:
+            // Parte creciente del rombo:
             for (let i = 1; i <= filas; i++) {
                 let linea = '';
                 for (let j = 1; j <= 2 * i - 1; j++) {
                     linea += '*';
                 }
-                output += linea + '<br>';
+                output += ' '.repeat(filas - i) + linea + '<br>';
             }
 
-            //Parte decreciente del rombo:
+            // Parte decreciente del rombo:
             for (let i = filas - 1; i >= 1; i--) {
                 let linea = '';
                 for (let j = 1; j <= 2 * i - 1; j++) {
                     linea += '*';
                 }
-                output += linea + '<br>';
+                output += ' '.repeat(filas - i) + linea + '<br>';
             }
+
             document.getElementById('rombo').innerHTML = output;
         }
-        // var n_rows = parseFloat(document.getElementById('n_rows').value);
-
-        dibujarRombo(15); //Ejecutamos la función.    
     </script>
 </body>
 
