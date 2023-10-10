@@ -31,16 +31,15 @@ function calculateTip() {
     // Get the value of the bill and percentage entered by the user
     var bill = parseFloat(document.getElementById('bill').value);
     var percentage = parseFloat(document.getElementById('percentage').value);
-
+    // var percentage2 = parseFloat(document.getElementById('value').value)
     // Check if the radius is a valid number
     if (isNaN(bill) || (isNaN(percentage))) {
+    // if (isNaN(bill)) {
         // Display an error message if the bill or percentage is not a valid number
         window.alert("The bill or percentage is not a valid number");
     } else {
-
         // Calculate the area and perimeter of the circumference with the entered radius
         var tip = bill * (percentage / 100)
-
         // Display the results in the HTML page
         document.getElementById('tip').innerHTML = tip.toFixed(2);
     }

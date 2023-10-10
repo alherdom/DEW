@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style7.css">
+    <link rel="stylesheet" href="style.css">
     <title>Tip Calculator</title>
 </head>
 
@@ -14,10 +14,15 @@
         <h4>Select the percentage and enter the total bill:</h4>
         <input type="text" id="bill" placeholder="$">
         <input type="text" id="percentage" placeholder="%"><br><br>
+        <!-- <select onchange="calculateTip()" id="value">
+            <option>10</option>
+            <option>15</option>
+            <option>20</option>
+        </select> -->
         <button onclick="calculateTip()">Calculate</button><br>
         <p><span id="tip"></span> $</p>
     </div>
-    <script src="script7.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

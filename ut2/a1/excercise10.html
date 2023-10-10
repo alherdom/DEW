@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rombo de emoticonos</title>
+</head>
+
+<body>
+
+    <input type="text" class="n_rows" onchange="dibujarRombo(n_rows)">Escoja el número de filas del rombo: </input><br>
+    <button>Calculate</button>
+    
+    <div id="rombo" style="text-align: center"></div>
+
+    <script>
+        var n_rows = document.getElementById('n_rows').value;
+
+        function dibujarRombo(filas) {
+
+            let output = '';
+
+            //Parte creciente del rombo:
+            for (let i = 1; i <= filas; i++) {
+                let linea = '';
+                for (let j = 1; j <= 2 * i - 1; j++) {
+                    linea += '*';
+                }
+                output += linea + '<br>';
+            }
+
+            //Parte decreciente del rombo:
+            for (let i = filas - 1; i >= 1; i--) {
+                let linea = '';
+                for (let j = 1; j <= 2 * i - 1; j++) {
+                    linea += '*';
+                }
+                output += linea + '<br>';
+            }
+            document.getElementById('rombo').innerHTML = output;
+        }
+        // var n_rows = parseFloat(document.getElementById('n_rows').value);
+
+        dibujarRombo(15); //Ejecutamos la función.    
+    </script>
+</body>
+
+</html>
