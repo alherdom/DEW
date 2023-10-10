@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script>src="script.js"</script>
+  <link rel="stylesheet" href="style7.css">
+  <title>Circumference Calculator</title>
 </head>
+
 <body>
-  <input id="radio">
-    Type the radio circunference:
-</input>
-  
+  <div class="calc">
+    <h1>Circumference Calculator</h1>
+    <h4>Fixed radius of 5 meters:</h4>
+    <p>- Area: <span id="area1"></span> square meters</p>
+    <p>- Perimeter: <span id="perimeter1"></span> meters</p>
+
+    <h4>Enter the radius to calculate the area and perimeter:</h4>
+    <input type="text" id="radiusInput" placeholder="Radius">
+    <button onclick="calculateCircumference()">Calculate</button>
+    <p>- Area: <span id="area2"></span> square meters</p>
+    <p>- Perimeter: <span id="perimeter2"></span> meters</p>
+  </div>
+  <script src="script7.js"></script>
 </body>
+
 </html>
