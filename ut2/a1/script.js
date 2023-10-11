@@ -47,7 +47,7 @@ function calculateTip() {
 
 function findDivisors() {
     // Get the number from the 'number' input element and convert it to a floating-point number.
-    const number = parseFloat(document.getElementById('number').value);
+    const number = parseInt(document.getElementById('number').value);
     // Create an empty array to store the divisors.
     const divisors = [];
     // Loop from 1 to the entered number to find divisors.
@@ -61,5 +61,36 @@ function findDivisors() {
     // Log the divisors to the console.
     console.log(divisors);
     // Display the divisors in the 'divisors' element on the HTML page.
-    document.getElementById('divisors').innerHTML = divisors;
+    document.getElementById('divisors').innerHTML = divisors.join(', ');
 }
+
+function getFibonacci() {
+    // Get the limit from the 'limit' input element and convert it to an integer.
+    const limit = parseInt(document.getElementById('limit').value);
+    // Create an array to store the Fibonacci sequence.
+    const fibonacci = [];
+    // Initial values for the Fibonacci sequence.
+    let a = 0;
+    let b = 1;
+    // If the limit is 0 or 1, just return the appropriate sequence.
+    if (limit === 0) {
+        fibonacci.push(0);
+    } else if (limit === 1) {
+        fibonacci.push(0, 1);
+    } else {
+        // Calculate the Fibonacci sequence.
+        fibonacci.push(a, b);
+        for (let i = 2; i < limit; i++) {
+            const next = a + b;
+            fibonacci.push(next);
+            a = b;
+            b = next;
+        }
+    }
+    // Log the Fibonacci sequence to the console.
+    console.log(fibonacci);
+
+    // Display the Fibonacci sequence in the 'fibonacci' element on the HTML page.
+    document.getElementById('fibonacci').innerHTML = fibonacci.join(', ');
+}
+
