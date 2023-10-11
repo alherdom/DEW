@@ -84,7 +84,7 @@ function getFibonacci() {
         }
     }
     // Log the Fibonacci sequence to the console.
-    console.log(fibonacci);
+    // console.log(fibonacci);
     // Display the Fibonacci sequence in the 'fibonacci' element on the HTML page.
     document.getElementById('fibonacci').innerHTML = fibonacci.join(', ');
 }
