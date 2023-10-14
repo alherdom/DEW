@@ -1,3 +1,20 @@
+function clean7() {
+    const table = document.getElementById('table7');
+    table.innerHTML = ''; // Limpia el contenido anterior de la tabla
+}
+
+function clean8() {
+    const table = document.getElementById('table8');
+    table.innerHTML = ''; // Limpia el contenido anterior de la tabla
+}
+
+function clean9() {
+    const table = document.getElementById('table9');
+    table.innerHTML = ''; // Limpia el contenido anterior de la tabla
+    const runButton = document.getElementById('button9');
+    runButton.disabled = false;
+}
+
 function table7() {
     const table = document.getElementById('table7');
     table.innerHTML = ''; // Limpia el contenido anterior de la tabla
@@ -33,6 +50,8 @@ function table9() {
         row.innerHTML = `<td>${x} ÷ 9 =</td><td>${result.toFixed(3)}</td>`;
         table.appendChild(row);
     } while (x < 10);
+    const runButton = document.getElementById('button9');
+    runButton.disabled = true;
 }
 
 function operation1() {
