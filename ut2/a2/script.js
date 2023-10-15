@@ -1,23 +1,27 @@
+// Clear the content of the table with id 'table7'
 function clean7() {
     const table = document.getElementById('table7');
-    table.innerHTML = ''; // Limpia el contenido anterior de la tabla
+    table.innerHTML = '';
 }
 
+// Clear the content of the table with id 'table8'
 function clean8() {
     const table = document.getElementById('table8');
-    table.innerHTML = ''; // Limpia el contenido anterior de la tabla
+    table.innerHTML = '';
 }
 
+// Clear the content of the table with id 'table9' and enable a run button
 function clean9() {
     const table = document.getElementById('table9');
-    table.innerHTML = ''; // Limpia el contenido anterior de la tabla
+    table.innerHTML = '';
     const runButton = document.getElementById('button9');
-    runButton.disabled = false;
+    runButton.disabled = false; // Enable a run button after clearing the table
 }
 
+// Generate a table for the multiplication of 7
 function table7() {
     const table = document.getElementById('table7');
-    table.innerHTML = ''; // Limpia el contenido anterior de la tabla
+    table.innerHTML = '';
 
     for (let i = 1; i <= 10; i++) {
         const result = 7 * i;
@@ -27,6 +31,7 @@ function table7() {
     }
 }
 
+// Generate a table for the addition of 8 to numbers from 1 to 10
 function table8() {
     const table = document.getElementById('table8');
     table.innerHTML = '';
@@ -40,6 +45,7 @@ function table8() {
     }
 }
 
+// Generate a table for the division of numbers from 1 to 10 by 9
 function table9() {
     const table = document.getElementById('table9');
     let x = 0;
@@ -51,79 +57,85 @@ function table9() {
         table.appendChild(row);
     } while (x < 10);
     const runButton = document.getElementById('button9');
-    runButton.disabled = true;
+    runButton.disabled = true; // Disable the run button after generating the table
 }
 
+// Perform a bitwise right shift operation and display the result
 function operation1() {
     const divisor = Math.log(8) / Math.log(2);
     const result = 125 >> divisor.toFixed(0);
     document.getElementById('result1').innerHTML = result;
 }
 
+// Perform a bitwise left shift operation and display the result
 function operation2() {
     const multiplier = Math.log(4) / Math.log(2);
     const result = 40 << multiplier.toFixed(0);
     document.getElementById('result2').innerHTML = result;
 }
 
+// Perform a bitwise right shift operation and display the result
 function operation3() {
     const divisor = Math.log(2) / Math.log(2);
     const result = 25 >> divisor.toFixed(0);
     document.getElementById('result3').innerHTML = result;
 }
 
+// Perform a bitwise left shift operation and display the result
 function operation4() {
     const multiplier = Math.log(16) / Math.log(2);
     const result = 10 << multiplier.toFixed(0);
     document.getElementById('result4').innerHTML = result;
 }
 
+// Perform a basic arithmetic operation based on the operator and display the result
 function calc1(oper) {
-    // Obtener los valores de los números ingresados
-    var numero1 = parseFloat(document.getElementById("numero1").value);
-    var numero2 = parseFloat(document.getElementById("numero2").value);
-    // Declaro la variable resultado para actualizarla posteriormente
-    var resultado;
+    // Get values of the input numbers
+    var number1 = parseFloat(document.getElementById("number1").value);
+    var number2 = parseFloat(document.getElementById("number2").value);
+    // Declare the result variable for later update
+    var result;
 
-    // Realizar la operación según el operador
+    // Perform the operation according to the operator
     if (oper === '+') {
-        resultado = numero1 + numero2;
+        result = number1 + number2;
     } else if (oper === '-') {
-        resultado = numero1 - numero2;
+        result = number1 - number2;
     } else if (oper === '*') {
-        resultado = numero1 * numero2;
+        result = number1 * number2;
     } else if (oper === '/') {
-        resultado = numero1 / numero2;
+        result = number1 / number2;
     }
-    // Mostrar el resultado en la caja de texto
-    document.getElementById("resultado").value = resultado;
+    // Display the result in the text box
+    document.getElementById("result").value = result;
 }
 
+// Perform a basic arithmetic operation based on the operator using a switch statement and display the result
 function calc2(oper) {
-    // Obtener los valores de los números ingresados
-    var numero1 = parseFloat(document.getElementById("numero1").value);
-    var numero2 = parseFloat(document.getElementById("numero2").value);
-    // Declaro la variable resultado para actualizarla posteriormente
-    var resultado;
+    // Get values of the input numbers
+    var number1 = parseFloat(document.getElementById("number1").value);
+    var number2 = parseFloat(document.getElementById("number2").value);
+    // Declare the result variable for later update
+    var result;
 
-    // Realizar la operación según el operador
+    // Perform the operation based on the operator using a switch statement
     switch (oper) {
         case "+":
-            resultado = numero1 + numero2;
+            result = number1 + number2;
             break;
         case "-":
-            resultado = numero1 - numero2;
+            result = number1 - number2;
             break;
         case "*":
-            resultado = numero1 * numero2;
+            result = number1 * number2;
             break;
         case "/":
-            resultado = numero1 / numero2;
+            result = number1 / number2;
             break;
         default:
-            resultado = "Not valid oper";
+            result = "Not a valid operation";
             break;
     }
-    // Mostrar el resultado en la caja de texto
-    document.getElementById("resultado").value = resultado;
+    // Display the result in the text box
+    document.getElementById("result").value = result;
 }

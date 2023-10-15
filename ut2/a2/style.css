@@ -31,14 +31,33 @@ div.calc {
     width: 600px;
     border-radius: .5em;
     background-color: #5840FF;
-    margin-bottom: 20px;
+    margin-bottom: 31px;
+}
+
+div.calc1 {
+    color: white;
+    text-align: center;
+    min-height: 150px;
+    width: 600px;
+    border-radius: .5em;
+    background-color: #5840FF;
+}
+
+div.calc2 {
+    color: white;
+    text-align: center;
+    height: 330px;
+    width: 600px;
+    border-radius: .5em;
+    background-color: #5840FF;
+    margin-bottom: 25px;
 }
 
 input {
     border-radius: .5em;
     text-align: center;
     font-weight: bolder;
-    height: 31px;
+    height: 30px;
     width: 95px;
 }
 
@@ -52,10 +71,36 @@ button {
     margin-bottom: 15px;
     width: 100px;
     height: 40px;
+    transition: transform 0.1s;
+}
+
+button.button1 {
+    font-weight: bolder;
+    font-size: medium;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: .5em;
+    margin-top: 10px;
+    margin-right: 5px;
+    width: 50px;
+    height: 40px;
+    transition: transform 0.1s;
+}
+
+button.button1:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button.button1:active {
+    background-color: #3e8e41;
 }
 
 button:hover {
-    background-color: #45a049;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 button:active {
@@ -63,30 +108,18 @@ button:active {
 }
 
 button.delete {
-    font-weight: bolder;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: .5em;
-    margin-bottom: 15px;
-    width: 100px;
-    height: 40px;
     margin-left: 20px;
-}
-
-button.delete:hover {
-    background-color: #45a049;
-}
-
-button.delete:active {
-    background-color: #3e8e41;
 }
 
 span {
     font-weight: bolder;
 }
 
+input {
+    text-align: center;
+}
+
 table {
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
