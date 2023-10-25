@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Simple Calculator</title>
+</head>
+
+<body>
+    <h1>Simple Calculator</h1>
+    <div class="calc2">
+        <form><br><br>
+            <label for="numero1">Number 1:
+                <input type="number" id="number1" name="number1" required>
+            </label>
+            <br><br>
+            <label for="numero2">Number 2:
+                <input type="number" id="number2" name="number2" required>
+            </label>
+            <br><br>
+            <div>
+                <button class="button1" type="button" onclick="calc2('+')">+</button>
+                <button class="button1" type="button" onclick="calc2('-')">-</button>
+                <button class="button1" type="button" onclick="calc2('*')">&times;</button>
+                <button class="button1" type="button" onclick="calc2('/')">÷</button>
+                <button class="button1" type="button" onclick="calc2('^')">^</button>
+            </div>
+        </form>
+        <p class="">Solution: <input type="text" id="result" readonly></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
