@@ -9,4 +9,7 @@ function numberGenerate(min, max) {
     if (number <= 5) {
         newPage = window.open("https://www.google.com/", "sub", "height=600,width=600");
     }
+    // else {
+    //     alert
+    // }
 }

@@ -42,11 +42,11 @@ button {
 
 input {
     font-weight: bolder;
-    font-size: 16px;
+    font-size: 14px;
     color: black;
     border: none;
     border-radius: .9em;
-    width: 150px;
+    width: 160px;
     height: 50px;
     text-align: center;
     justify-content: center;
@@ -75,6 +75,11 @@ table {
 }
 
 #chrono {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#countdown {
     font-size: 20px;
     font-weight: bold;
 }

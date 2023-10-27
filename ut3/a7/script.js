@@ -4,17 +4,41 @@ let time = 0;
 let interval;
 // Get the respective buttons from the HTML and declare them as const
 // Used later in enabled or disabled these buttons
-const chronoElement = document.getElementById("chrono");
+const setDate = document.getElementById("date").value
+const setTime = document.getElementById("hour")
+const countdownElement = document.getElementById("countdown");
 const startButton = document.getElementById("start");
 const stopButton = document.getElementById("stop");
 const restartButton = document.getElementById("restart");
+const currentDateTime = new Date()
+const dateSet = new Date(setDate)
+
+
+function getDate() {
+    let millisecondsNow = Date.now(currentDateTime)
+    let millisecondsDate = dateSet.getTime()
+    console.log(millisecondsNow)
+    console.log(millisecondsDate)
+    let remainingTime = (millisecondsDate - millisecondsNow)
+    console.log(remainingTime)
+
+    const seconds = remainingTime / 1000
+    const minutes = seconds / 60
+    seconds = seconds + (seconds % 60)
+    const hours = minutes / 60
+    const days = hours / 24
+    minutes = minutes + (minutes % 60) 
+    
+}
+
+
 // Use a function to update the chrono display, and "f-string"
-function updateChrono() {
+function updateCountdown() {
     time++;
     const hours = Math.floor(time / 3600);
     const minutes = Math.floor((time % 3600) / 60);
     const seconds = time % 60;
-    chronoElement.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    chronoElement.textContent = `${String(hours).padStart(2, '0')}/${String(hours).padStart(2, '0')}/${String(minutes).padStart(2, '0')}/${String(seconds).padStart(2, '0')}`;
 }
 // When press the start button call the updateChrono function on the interval of 1000 (1s)
 // And disabled startButton and enabled the stopButton

@@ -12,8 +12,10 @@
     <h1>Set Date and Countdown</h1>
     <div class="calc">
         <br><br>
-        <div id="date"><input></div>
+        <input id="date" onchange="getDate()" type="datetime-local">
         <br><br>
+        <span id="countdown">00/00/00/00</span>
+        <br><br><br>
         <button class="start" onclick="startChrono()">Start</button>
         <button class="stop" onclick="stopChrono()">Stop</button>
         <button class="restart" onclick="restartChrono()">Restart</button>
