@@ -33,6 +33,7 @@ button {
     margin-left: 15px;
     transition: transform 0.1s;
 }
+
 .box-time {
     text-align: center;
     justify-content: center;
@@ -71,4 +72,9 @@ input {
 table {
     margin-top: 10px;
     margin-bottom: 15px;
+}
+
+#chrono {
+    font-size: 20px;
+    font-weight: bold;
 }
