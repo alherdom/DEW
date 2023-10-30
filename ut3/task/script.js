@@ -8,7 +8,6 @@ function openNewWindow() {
 	newWindow.document.write(`<li>URL Completa: ${newWindow.location.href}</li>`);
 	newWindow.document.write(`<li>Protocolo utilizado: ${newWindow.location.protocol}</li>`);
 	newWindow.document.write(`<li>Nombre en código del navegador: ${newWindow.navigator.appCodeName} </li>`);
-
 	if (newWindow.navigator.javaEnabled()) {
 		newWindow.document.write(`<li>Java SI disponible en esta ventana</li>`);
 	} else {
