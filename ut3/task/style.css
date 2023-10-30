@@ -49,3 +49,7 @@ button:hover {
 button:active {
     background-color: #3e8e41;
 }
+
+li {
+    line-height: 5ex;
+}

@@ -1,30 +1,37 @@
 function openNewWindow() {
+	// Open new window non-resizable, and then add link elemente for apply the style.css
 	let newWindow = window.open('', '_blank', 'resizable=no,width=2000,height=1100');
 	newWindow.document.write('<br><h3>Ejemplo de Ventana Nueva</h3>');
 	let linkElement = newWindow.document.createElement('link');
 	linkElement.rel = 'stylesheet';
 	linkElement.href = 'style.css';
 	newWindow.document.head.appendChild(linkElement);
+	// Use "location" metods to get: URL, Protocol, and CodeName
 	newWindow.document.write(`<li>URL Completa: ${newWindow.location.href}</li>`);
 	newWindow.document.write(`<li>Protocolo utilizado: ${newWindow.location.protocol}</li>`);
 	newWindow.document.write(`<li>Nombre en código del navegador: ${newWindow.navigator.appCodeName} </li>`);
+	// Ask if javascript is enabled or not
 	if (newWindow.navigator.javaEnabled()) {
 		newWindow.document.write(`<li>Java SI disponible en esta ventana</li>`);
 	} else {
 		newWindow.document.write(`<li>Java NO disponible en esta ventana</li>`);
 	}
-	newWindow.document.write(`<br><iframe src="https://www.marca.com" width="800" height="600"></iframe>`);
+	// Open new window that have "www.google.es" iframe 
+	newWindow.document.write(`<br><iframe src="https://www.bing.com/" width="800" height="600"></iframe>`);
+	// newWindow.document.write(`<br><iframe src="https://www.google.es" width="800" height="600"></iframe>`);
 }
-
+// Use "prompt" for type the name and date of birth inputs
 let name = prompt('Introduce tu nombre y apellidos:');
 let dayOfBirth = prompt('Introduce el DIA de nacimiento:');
 let monthOfBirth = prompt('Introduce el MES de nacimiento:');
 let yearOfBirth = prompt('Introduce el AÑO de nacimiento:');
+// Get the age with current date and date of birth
 let dateOfBirth = new Date(yearOfBirth + '-' + monthOfBirth + '-' + dayOfBirth)
 let age = new Date().getFullYear() - new Date(yearOfBirth, monthOfBirth, dayOfBirth).getFullYear();
+// We need a array with de name of the week days and months, then get de day name of the day of the birth and name month
 const weekDays = ['domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
 const months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
-
+// Documents wirtes for print the info in the main window
 document.write('<h1>TAREA DWEC03</h1><hr />');
 document.write(`<li>Buenos días ${name}</li>`);
 document.write(`<li>Tu nombre y apellidos tienen ${name.length} caracteres, incluidos espacios</li>`);
