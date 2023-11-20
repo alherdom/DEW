@@ -49,6 +49,7 @@ carDatabase.addCar("Honda Civic", "Azul", "XYZ789", 2021);
 carDatabase.showCars();
 carDatabase.removeCar("ABC123");
 carDatabase.showCars();
+
 // function Car(model, colour, plate, year) {
 //   this.model = model;
 //   this.colour = colour;
