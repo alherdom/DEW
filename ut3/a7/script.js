@@ -1,65 +1,51 @@
-// Initialize time to 0
-let time = 0;
-// Declare the "interval" variable to used later on
-let interval;
-// Get the respective buttons from the HTML and declare them as const
-// Used later in enabled or disabled these buttons
-const setDate = document.getElementById("date").value
-const setTime = document.getElementById("hour")
-const countdownElement = document.getElementById("countdown");
-const startButton = document.getElementById("start");
-const stopButton = document.getElementById("stop");
-const restartButton = document.getElementById("restart");
-const currentDateTime = new Date()
-const dateSet = new Date(setDate)
-
+let countdownInterval;
+let targetDate;
 
 function getDate() {
-    let millisecondsNow = Date.now(currentDateTime)
-    let millisecondsDate = dateSet.getTime()
-    console.log(millisecondsNow)
-    console.log(millisecondsDate)
-    let remainingTime = (millisecondsDate - millisecondsNow)
-    console.log(remainingTime)
+  const selectedDate = document.getElementById("date").value;
 
-    const seconds = remainingTime / 1000
-    const minutes = seconds / 60
-    seconds = seconds + (seconds % 60)
-    const hours = minutes / 60
-    const days = hours / 24
-    minutes = minutes + (minutes % 60) 
-    
+  // Check if a date is selected
+  if (selectedDate) {
+    targetDate = new Date(selectedDate).getTime();
+    updateCountdown();
+  } else {
+    alert("Please select a valid date.");
+  }
 }
 
-
-// Use a function to update the chrono display, and "f-string"
 function updateCountdown() {
-    time++;
-    const hours = Math.floor(time / 3600);
-    const minutes = Math.floor((time % 3600) / 60);
-    const seconds = time % 60;
-    chronoElement.textContent = `${String(hours).padStart(2, '0')}/${String(hours).padStart(2, '0')}/${String(minutes).padStart(2, '0')}/${String(seconds).padStart(2, '0')}`;
+  if (targetDate) {
+    const currentDate = new Date().getTime();
+    const timeDifference = targetDate - currentDate;
+
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor(
+      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    const countdownElement = document.getElementById("countdown");
+    countdownElement.textContent = `${days}/${hours}/${minutes}/${seconds}`;
+  }
 }
-// When press the start button call the updateChrono function on the interval of 1000 (1s)
-// And disabled startButton and enabled the stopButton
+
 function startChrono() {
-    interval = setInterval(updateChrono, 1000);
-    startButton.disabled = true;
-    stopButton.disabled = false;
+  if (targetDate) {
+    countdownInterval = setInterval(updateCountdown, 1000);
+  } else {
+    alert("Please select a valid date before starting the countdown.");
+  }
 }
-// When press the stop button used "clearInterval()" to stop the chrono, stop calls function
-// And enabled startButton and disabled the stopButton
+
 function stopChrono() {
-    clearInterval(interval);
-    startButton.disabled = false;
-    stopButton.disabled = true;
+  clearInterval(countdownInterval);
 }
-// When press the restart button, again stop the interval calls but now we reinitialize the time to 0
-// // And enabled startButton and disabled the stopButton
+
 function restartChrono() {
-    clearInterval(interval);
-    time = 0
-    chronoElement.textContent = '00:00:00';
-    startButton.disabled = false;
-    stopButton.disabled = true;
+  clearInterval(countdownInterval);
+  targetDate = null; // Reset the target date
+  document.getElementById("countdown").textContent = "00/00/00/00"; // Reset the countdown display
 }
