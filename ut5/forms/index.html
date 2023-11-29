@@ -1,32 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>UT5 - Form Activity</title>
 </head>
+
 <body>
-    <form action="">
-        <h4>Pregunta 1.- Checkbox</h4>
-        <label for="">¿Cuáles de las siguientes frutas son rojas?</label>
-        <input type="checkbox" id="manzana" name="manzana" value="manzana">Manzana
-        <input type="checkbox" id="platano" name="platano" value="platano">Plátano
-        <input type="checkbox" id="fresa" name="fresa" value="fresa">Fresa
-        <input type="checkbox" id="mango" name="mango" value="mango">Mango
+    <div class="formulario">
+        <form action="">
+            <h4>Pregunta 1.- Checkbox</h4>
+            <label for="">¿Cuáles de las siguientes frutas son rojas?</label>
+            <input type="checkbox" id="manzana" name="respuesta1" value="manzana">Manzana
+            <input type="checkbox" id="platano" name="respuesta1" value="platano">Plátano
+            <input type="checkbox" id="fresa" name="respuesta1" value="fresa">Fresa
+            <input type="checkbox" id="mango" name="respuesta1" value="mango">Mango
+            <br>
+            <br>
+            <button type="submit" class="envio">Comprobar</button><span id="resultado1"></span>
 
-        <h4>Pregunta 2.- Radio</h4>
-        <label for="">¿Cuál de las siguientes opciones es un color primario?</label>
-        <input type="radio" id="rojo" name="rojo" value="rojo">Rojo
-        <input type="radio" id="verde" name="verde" value="verde">Verde
-        <input type="radio" id="naranja" name="naranja" value="naranja">Naranja
-        <input type="radio" id="marron" name="marron" value="marron">Marrón
+            <h4>Pregunta 2.- Radio</h4>
+            <label for="">¿Cuál de las siguientes opciones es un color primario?</label>
+            <input type="radio" id="rojo" name="respuesta2" value="rojo">Rojo
+            <input type="radio" id="verde" name="respuesta2" value="verde">Verde
+            <input type="radio" id="naranja" name="respuesta2" value="naranja">Naranja
+            <input type="radio" id="marron" name="respuesta2" value="marron">Marrón
+            <br>
+            <br>
+            <button type="submit" class="envio">Comprobar</button>
 
-        <h4>Pregunta 3.- Select</h4>
-        <label for="">¿Cuál de las siguientes opciones es un color primario?</label>
-        <input type="radio" id="rojo" name="rojo" value="rojo">Rojo
-        <input type="radio" id="verde" name="verde" value="verde">Verde
-        <input type="radio" id="naranja" name="naranja" value="naranja">Naranja
-        <input type="radio" id="marron" name="marron" value="marron">Marrón
-    </form>
+            <h4>Pregunta 3.- Select</h4>
+            <label for="">Selecciona un día de la semana que comience con la letra "J".</label>
+            <select id="opciones" name="opciones">
+                <option value="1">Lunes</option>
+                <option value="2">Martes</option>
+                <option value="3">Miércoles</option>
+                <option value="4">Jueves</option>
+            </select>
+            <br>
+            <br>
+            <button type="submit" class="envio">Comprobar</button>
+        </form>
+        <div id="resultado"></div>
+    </div>
+
+    <script src="script.js" defer></script>
 </body>
+
 </html>

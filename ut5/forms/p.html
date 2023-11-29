@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examen</title>
+</head>
+<body>
+
+  <h1>Examen</h1>
+
+  <form id="formularioExamen">
+    <label for="respuesta1">¿Cuáles de los siguientes animales son mamíferos?</label>
+    <input type="checkbox" id="perro" name="respuesta1" value="perro">Perro
+    <input type="checkbox" id="gato" name="respuesta1" value="gato">Gato
+    <input type="checkbox" id="pajaro" name="respuesta1" value="pajaro">Pájaro
+    <input type="checkbox" id="elefante" name="respuesta1" value="elefante">Elefante
+
+    <button type="button" onclick="calcularPuntuacion()">Calificar</button>
+  </form>
+
+  <script>
+    function calcularPuntuacion() {
+      // Obtén los elementos de los checkboxes por su id
+      let respuestaPerro = document.getElementById("perro");
+      let respuestaGato = document.getElementById("gato");
+      let respuestaPajaro = document.getElementById("pajaro");
+      let respuestaElefante = document.getElementById("elefante");
+
+      // Verifica las respuestas y suma la puntuación
+      let puntuacion = 0;
+
+      if (respuestaPerro.checked) {
+        puntuacion += 0.25;
+      }
+
+      if (respuestaGato.checked) {
+        puntuacion += 0.25;
+      }
+
+      if (!respuestaPajaro.checked) {
+        puntuacion += 0.25;  // Se resta puntaje por respuesta incorrecta
+      }
+
+      if (respuestaElefante.checked) {
+        puntuacion += 0.25;
+      }
+
+      // Muestra el resultado en la consola
+      console.log("Puntuación: " + puntuacion);
+    }
+  </script>
+
+</body>
+</html>
