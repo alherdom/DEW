@@ -9,12 +9,14 @@ form {
     color: white;
     padding: 20px 40px 40px 40px;
     background-color: orange;
+    background-color: #007f68;
+
     border-radius: 20px;
 }
 
 button {
     text-align: center;
-    background-color: #007aff;
+    background-color: #333333;
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -26,4 +28,8 @@ button {
 #resultado {
     margin-top: 25px;
     text-align: center;
+}
+
+#envio4 {
+    margin-left: 43%;
 }
