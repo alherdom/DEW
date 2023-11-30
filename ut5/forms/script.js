@@ -21,32 +21,18 @@ let nota = 0;
 function calcularNota1() {
   let elementoManzana = document.getElementById("manzana");
   let elementoFresa = document.getElementById("fresa");
-  let elementoPlatano = document.getElementById("platano");
-  let elementoMango = document.getElementById("mango");
 
-  if (elementoPlatano.checked && elementoMango.checked) {
+  if (!(elementoManzana.checked || elementoFresa.checked)) {
     nota = 0;
     alert(`Respuesta1 incorrecta ${nota} pto`);
-    return nota;
-  }
-
-  if (elementoManzana.checked && elementoFresa.checked) {
+  } else if (elementoManzana.checked && elementoFresa.checked) {
     nota += 1;
     alert(`Respuesta1 correcta ${nota} pto`);
-    return nota;
-  }
-
-  if (elementoManzana.checked && !elementoFresa.checked) {
+  } else {
     nota += 0.5;
     alert(`Respuesta1 parcialmente correcta ${nota} pto`);
-    return nota;
   }
-
-  if (elementoFresa.checked && !elementoManzana.checked) {
-    nota += 0.5;
-    alert(`Respuesta1 parcialmente correcta ${nota} pto`);
-    return nota;
-  }
+  return nota;
 }
 
 function calcularNota2() {
