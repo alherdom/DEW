@@ -11,13 +11,13 @@
 
 <body>
     <fieldset>
-        <form name="formulario" id="formulario" action="http://www.google.es" method="get">
+        <form name="formulario" id="formulario" action="" method="">
             <legend>Formulario de Registro</legend>
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" id="nombre" />
-            <label for="apellidos">Apellidos:</label>
+            <label for=" apellidos">Apellidos:</label>
             <input type="text" name="apellidos" id="apellidos" />
-            <label for="edad">Edad:</label>
+            <label for=" edad">Edad:</label>
             <input name="edad" type="text" id="edad" maxlength="3" />
             <label for="nif">NIF:</label>
             <input name="nif" type="text" id="nif" />
@@ -37,7 +37,8 @@
             <input name="hora" type="text" id="hora" />
             <div>
                 <input type="reset" name="limpiar" id="limpiar" value="Limpiar" />
-                <input type="submit" name="enviar" id="enviar" value="Enviar" />
+                <input type="button" name="enviar" id="enviar" value="Enviar" />
+                <!-- onclick="this.disabled=true;this.value='Enviando...';this.form.submit()" /> -->
             </div>
         </form>
         <div id="errores"></div>
