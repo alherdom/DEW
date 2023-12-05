@@ -1,81 +1,56 @@
 window.onload = iniciar;
 
 function iniciar() {
-  document.getElementById("enviar").addEventListener("click", validar, false);
-  document
-    .getElementById("nombre")
-    .addEventListener("blur", upperCaseName, true);
-  document
-    .getElementById("apellidos")
-    .addEventListener("blur", upperCaseLastName, true);
+  document.getElementById("enviar").addEventListener("click", validar);
+  document.getElementById("nombre").addEventListener("blur", upperCaseInput);
+  document.getElementById("apellidos").addEventListener("blur", upperCaseInput);
+  document.getElementById("nif").addEventListener("blur", upperCaseInput);
 }
 
-function upperCaseName() {
-  var x = document.getElementById("nombre").value;
-  document.getElementById("nombre").value = x.toUpperCase();
-}
-
-function upperCaseLastName() {
-  var x = document.getElementById("apellidos").value;
-  document.getElementById("apellidos").value = x.toUpperCase();
+function upperCaseInput() {
+  var inputId = this.id;
+  var inputValue = document.getElementById(inputId).value;
+  document.getElementById(inputId).value = inputValue.toUpperCase();
 }
 
 function validar(eventopordefecto) {
-  if (
-    validarcampostexto(this) &&
-    validarProvincia() &&
-    confirm("¿Deseas enviar formulario?")
-  )
-    return true;
-  else {
+  var form = eventopordefecto.target.form;
+
+  for (var i = 0; i < form.elements.length; i++) {
+    form.elements[i].className = "";
+  }
+
+  if (validarCamposTexto(form) && validarEdad(form) && validarProvincia()) {
+    if (!confirm("¿Deseas enviar formulario?")) {
+      eventopordefecto.preventDefault();
+    }
+  } else {
     eventopordefecto.preventDefault();
-    return false;
   }
 }
 
-function validarcampostexto(objeto) {
-  var formulario = objeto.form;
-  var errorElement = document.getElementById("errores");
-
-  for (var i = 0; i < formulario.elements.length; i++) {
-    formulario.elements[i].className = "";
-  }
-
-  for (var i = 0; i < formulario.elements.length; i++) {
-    if (
-      formulario.elements[i].type == "text" &&
-      formulario.elements[i].value == ""
-    ) {
-      errorElement.innerHTML =
-        "El campo: " + formulario.elements[i].name + " no puede estar en blanco";
-      formulario.elements[i].className = "error";
-      formulario.elements[i].focus();
+function validarCamposTexto(form) {
+  for (var i = 0; i < form.elements.length; i++) {
+    var element = form.elements[i];
+    if (element.type === "text" && element.value === "") {
+      mostrarError(element.name + " no puede estar en blanco");
+      resaltarCampoError(element);
       return false;
     }
-    if (formulario.elements[i].id == "edad") {
-      if (
-        isNaN(formulario.elements[i].value) ||
-        formulario.elements[i].value < 0 ||
-        formulario.elements[i].value > 105
-      ) {
-        errorElement.innerHTML =
-          "El campo: " +
-          formulario.elements[i].name +
-          " posee valores incorrectos o la edad <0 o >105";
-        formulario.elements[i].className = "error";
-        formulario.elements[i].focus();
-        return false;
-      }
-    }
-    if (formulario.elements[i].id == "nif") {
-      console.log("HOLA LLEGUE!");
-      var patron = /^\d{8}[A-Za-z]$/;
-      if (patron.exec(document.getElementById("nif").value) == null) {
-        errorElement.innerHTML =
-          "El campo: " +
-          formulario.elements[i].name +
-          " posee valores incorrectos";
-        document.getElementById("nif").focus();
+  }
+  return true;
+}
+
+function validarEdad(form) {
+  for (var i = 0; i < form.elements.length; i++) {
+    var element = form.elements[i];
+    if (element.id === "edad") {
+      var edad = parseInt(element.value, 10);
+      if (isNaN(edad) || edad < 0 || edad > 105) {
+        mostrarError(
+          element.name + " posee valores incorrectos o la edad < 0 o > 105"
+        );
+        resaltarCampoError(element);
         return false;
       }
     }
@@ -84,10 +59,22 @@ function validarcampostexto(objeto) {
 }
 
 function validarProvincia() {
-  var errorElement = document.getElementById("errores");
-  if (document.getElementById("provincia").selectedIndex == 0) {
-    errorElement.innerHTML = "Atención!:Debes seleccionar una provincia.";
-    document.getElementById("provincia").focus();
+  var provinciaElement = document.getElementById("provincia");
+
+  if (provinciaElement.selectedIndex === 0) {
+    mostrarError("Debes seleccionar una provincia.");
+    resaltarCampoError(provinciaElement);
     return false;
-  } else return true;
+  }
+  return true;
+}
+
+function mostrarError(mensaje) {
+  var errorElement = document.getElementById("errores");
+  errorElement.innerHTML = mensaje;
+}
+
+function resaltarCampoError(element) {
+  element.className = "error";
+  element.focus();
 }
