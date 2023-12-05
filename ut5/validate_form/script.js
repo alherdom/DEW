@@ -78,7 +78,7 @@ function validateTextFields(objeto) {
 
     // ^[\w]+@{1}[\w]+\.[a-z] -> Empieza por 1 o más caracteres alfanuméricos,
     // seguido de @, seguido de 1 o más caracteres alfanuméricos,
-    // seguido de un punto, seguido de 2 o 3 caracteres alfabéticos
+    // seguido de un punto y termina con 2 o 3 caracteres alfabéticos
     if (currentElement.id == "email" && !/^[\w]+@{1}[\w]+\.[a-z]{2,3}$/.test(currentElement.value)) {
       showError(currentElement.name + " incorrecto, ejemplo: name@email.com");
       return false;
@@ -90,7 +90,7 @@ function validateTextFields(objeto) {
     }
 
     // ^\d{2}\/\d{2}\/\d{4}$ -> Empieza por 2 dígitos, seguido de /,
-    // seguido de 2 dígitos, seguido de /, seguido de 4 dígitos
+    // seguido de 2 dígitos, seguido de / y termina con 4 dígitos
     if (currentElement.id == "fecha" && !/^\d{2}\/\d{2}\/\d{4}$/.test(currentElement.value)) {
       showError(currentElement.name + " incorrecto, formato: dd/mm/yyyy");
       return false;
@@ -102,7 +102,7 @@ function validateTextFields(objeto) {
       return false;
     }
 
-    // ^\d{2}:\d{2}$ -> Empieza por 2 dígitos, seguido de : ,seguido de 2 dígitos
+    // ^\d{2}:\d{2}$ -> Empieza por 2 dígitos, seguido de : y termina con 2 dígitos
     if (currentElement.id == "hora" && !/^\d{2}:\d{2}$/.test(currentElement.value)) {
       showError(currentElement.name + " incorrecto, formato: HH:MM");
       return false;
