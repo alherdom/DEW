@@ -2,8 +2,12 @@ window.onload = iniciar;
 
 function iniciar() {
   document.getElementById("enviar").addEventListener("click", validar, false);
-  document.getElementById("nombre").addEventListener("blur", upperCaseName, true);
-  document.getElementById("apellidos").addEventListener("blur", upperCaseLastName, true);
+  document
+    .getElementById("nombre")
+    .addEventListener("blur", upperCaseName, true);
+  document
+    .getElementById("apellidos")
+    .addEventListener("blur", upperCaseLastName, true);
 }
 
 function upperCaseName() {
@@ -42,35 +46,45 @@ function validarcampostexto(objeto) {
       formulario.elements[i].type == "text" &&
       formulario.elements[i].value == ""
     ) {
-      errorElement.innerHTML = "El campo:" + formulario.elements[i].name + " no puede estar en blanco";
+      errorElement.innerHTML =
+        "El campo: " + formulario.elements[i].name + " no puede estar en blanco";
       formulario.elements[i].className = "error";
       formulario.elements[i].focus();
       return false;
-    } else if (formulario.elements[i].id == "edad") {
-            if (
-                isNaN(formulario.elements[i].value) ||
-                formulario.elements[i].value < 0 ||
-                formulario.elements[i].value > 105
-            ) {
-                errorElement.innerHTML = "El campo:" + formulario.elements[i].name + " posee valores incorrectos o la edad <0 o >105";
-                formulario.elements[i].className = "error";
-                formulario.elements[i].focus();
-                return false;
-            }
-    } else if (formulario.elements[i] == "nif") {
-        var patron = /^\d{8}-[A-Za-z]$/;
-        if (patron.test(document.getElementById("nif").value)) {
-            document.getElementById("nif").focus();
-            errorElement.innerHTML = "El campo:" + formulario.elements[i].name + " posee valores incorrectos";
-        }
     }
-    
+    if (formulario.elements[i].id == "edad") {
+      if (
+        isNaN(formulario.elements[i].value) ||
+        formulario.elements[i].value < 0 ||
+        formulario.elements[i].value > 105
+      ) {
+        errorElement.innerHTML =
+          "El campo: " +
+          formulario.elements[i].name +
+          " posee valores incorrectos o la edad <0 o >105";
+        formulario.elements[i].className = "error";
+        formulario.elements[i].focus();
+        return false;
+      }
     }
-    return true;
+    if (formulario.elements[i].id == "nif") {
+      console.log("HOLA LLEGUE!");
+      var patron = /^\d{8}[A-Za-z]$/;
+      if (patron.exec(document.getElementById("nif").value) == null) {
+        errorElement.innerHTML =
+          "El campo: " +
+          formulario.elements[i].name +
+          " posee valores incorrectos";
+        document.getElementById("nif").focus();
+        return false;
+      }
+    }
+  }
+  return true;
 }
 
 function validarProvincia() {
-    var errorElement = document.getElementById("errores");
+  var errorElement = document.getElementById("errores");
   if (document.getElementById("provincia").selectedIndex == 0) {
     errorElement.innerHTML = "Atención!:Debes seleccionar una provincia.";
     document.getElementById("provincia").focus();
