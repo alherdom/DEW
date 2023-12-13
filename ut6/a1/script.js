@@ -8,12 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
     parragraphs_qsa[2].getElementsByTagName("a").length;
   let second_last_link = links_qsa[number_of_all_links - 2];
   let target_url = "http://prueba";
-  let regex = /^http:\/\/prueba$/;
   var count = 0;
 
   for (var i = 0; i < links_qsa.length; i++) {
     var link = links_qsa[i];
-    if (link.href.indexOf(target_url) !== -1) {
+    if (link.href == target_url || link.href == "http://prueba/") {
       count++;
     }
   }
