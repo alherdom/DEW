@@ -1,51 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Function to create form fields
+  function createFormField(labelText, inputType, inputName, isRequired) {
+    var label = document.createElement("label");
+    label.textContent = labelText + ": ";
+
+    var input = document.createElement("input");
+    input.setAttribute("type", inputType);
+    input.setAttribute("name", inputName);
+    if (isRequired) {
+      input.setAttribute("required", "required");
+    }
+
+    return { label, input };
+  }
+
   // Create the form
   var form = document.createElement("form");
   form.setAttribute("id", "myForm");
 
-  // Create and add fields to the form
-  var labelSubject = document.createElement("label");
-  labelSubject.textContent = "Asunto: ";
-  var inputSubject = document.createElement("input");
-  inputSubject.setAttribute("type", "text");
-  inputSubject.setAttribute("name", "subject");
-  inputSubject.setAttribute("required", "required");
-  form.appendChild(labelSubject);
-  form.appendChild(inputSubject);
-  form.appendChild(document.createElement("br"));
+  // Define form fields
+  var fields = [
+    { label: "Asunto", name: "subject", type: "text", required: true },
+    { label: "Email", name: "email", type: "email", required: true },
+    { label: "Nombre", name: "name", type: "text", required: true },
+    { label: "Apellido", name: "lastName", type: "text", required: true },
+  ];
 
   // Create and add fields to the form
-  var labelEmail = document.createElement("label");
-  labelEmail.textContent = "Email: ";
-  var inputEmail = document.createElement("input");
-  inputEmail.setAttribute("type", "email");
-  inputEmail.setAttribute("name", "email");
-  inputEmail.setAttribute("required", "required");
-  form.appendChild(labelEmail);
-  form.appendChild(inputEmail);
-  form.appendChild(document.createElement("br"));
-
-  // Create and add fields to the form
-  var labelName = document.createElement("label");
-  labelName.textContent = "Nombre: ";
-  var inputName = document.createElement("input");
-  inputName.setAttribute("type", "text");
-  inputName.setAttribute("name", "name");
-  inputName.setAttribute("required", "required");
-  form.appendChild(labelName);
-  form.appendChild(inputName);
-  form.appendChild(document.createElement("br"));
-
-  // Create and add fields to the form
-  var labelLastName = document.createElement("label");
-  labelLastName.textContent = "Apellido: ";
-  var inputLastName = document.createElement("input");
-  inputLastName.setAttribute("type", "text");
-  inputLastName.setAttribute("name", "lastName");
-  inputLastName.setAttribute("required", "required");
-  form.appendChild(labelLastName);
-  form.appendChild(inputLastName);
-  form.appendChild(document.createElement("br"));
+  fields.forEach(function (field) {
+    var { label, input } = createFormField(
+      field.label,
+      field.type,
+      field.name,
+      field.required
+    );
+    form.appendChild(label);
+    form.appendChild(input);
+    form.appendChild(document.createElement("br"));
+  });
 
   // Create and add fields to the form
   var labelMessage = document.createElement("label");
