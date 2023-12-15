@@ -1,20 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>DWEC06 - Tarea</title>
-<link type="text/css" rel="stylesheet" href="styles.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DWEC06 - Tarea</title>
+  <link type="text/css" rel="stylesheet" href="styles.css" />
+  <title>Document</title>
 </head>
+
 <body>
-<p>TABLERO DE DIBUJO EN JAVASCRIPT</p>
-<table width="500" border="1" id="paleta" summary="Tabla de selección de colores">
-  <caption>
-    Haga click en un color para comenzar a pintar
-  </caption>
-  <tr><td class="color1 seleccionado"></td><td class="color2"></td><td class="color3"></td><td class="color4"></td><td class="color5"></td><td class="color6"></td></tr>
-  <tr><td colspan="6" id="pincel">Estado del pincel</td></tr>
-</table>
-<p></p>
-<div id="zonadibujo"></div>
+  <h2>TABLERO DE DIBUJO EN JAVASCRIPT</h2>
+  <table width="500" border="1" id="paleta" summary="Tabla de selección de colores">
+    <caption>
+      Haga click en un color para comenzar a pintar
+    </caption>
+    <tr>
+      <td id="color1"></td>
+      <td id="color2"></td>
+      <td id="color3"></td>
+      <td id="color4"></td>
+      <td id="color5"></td>
+      <td id="color6"></td>
+    </tr>
+    <tr>
+      <td colspan="6" id="pincel">Estado del pincel</td>
+    </tr>
+    <tr>
+      <td colspan="6" id="btnLimpiar">Limpiar</td>
+    </tr>
+  </table>
+  <p></p>
+  <div id="zonadibujo">
+  </div>
+  <script src="script.js"></script>
 </body>
+
 </html>
