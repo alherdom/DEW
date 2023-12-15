@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     boardTable.appendChild(row);
     for (var j = 0; j < cellNumber; j++) {
       var cell = document.createElement("td");
-      cell.addEventListener("click", function () {
+      cell.addEventListener("mousemove", function () {
         this.style.backgroundColor = pincel.style.backgroundColor;
       });
       row.appendChild(cell);
