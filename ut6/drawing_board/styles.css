@@ -14,8 +14,8 @@ body {
 }
 
 .tablerodibujo td {
-	width: 10px;
-	height: 10px;
+	width: 5px;
+	height: 5px;
 	margin: 0px;
 	padding: 0px;
 	border: thin solid black;

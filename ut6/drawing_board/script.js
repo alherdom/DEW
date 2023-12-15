@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const cellNumber = 35;
+  const cellNumber = 100;
   var board = document.getElementById("zonadibujo");
   var boardTable = document.createElement("table");
   boardTable.className = "tablerodibujo";
