@@ -2,52 +2,88 @@ body {
 	background-color: white;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
-	color: #333;
+	color: black;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.my-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+	margin-bottom: 25px;
+}
+
 .tablerodibujo {
-	border: thin solid black;
-	width: auto;
+	border-collapse: collapse;
+	border: thin solid #ddd;
 }
 
 .tablerodibujo td {
-	width: 5px;
-	height: 5px;
+	width: 10px;
+	height: 10px;
 	margin: 0px;
 	padding: 0px;
-	border: thin solid black;
+	border: thin solid #ddd;  
 }
 
-#color1 {
+.color1 {
+	width: 50px;
+	height: 50px;
+	border-bottom: 1px solid transparent;
 	background-color: #FF0;
 }
 
-#color2 {
+.color2 {
+	width: 50px;
+	height: 50px;
+	border-bottom: 1px solid transparent;
 	background-color: #0F0;
 }
 
-#color3 {
-	background-color: #000;
+.color3 {
+	width: 50px;
+	height: 50px;
+	border-bottom: 1px solid transparent;
+	background-color: #333;
 }
 
-#color4 {
+.color4 {
+	width: 50px;
+	height: 50px;
+	border-bottom: 1px solid transparent;
 	background-color: #F00;
 }
 
-#color5 {
+.color5 {
+	width: 50px;
+	height: 50px;
+	border-bottom: 1px solid white;
 	background-color: #06C;
 }
 
-#color6 {
-	background-color: #FFF;
+.color6 {
+	width: 50px;
+	height: 50px;
+	border-bottom: 1px solid white;
+	background-color: rgb(216, 112, 213);
+}
+
+.color7 {
+	width: 50px;
+	height: 50px;
+	border-bottom: 1px solid transparent;
+	background-color: orange;
+}
+
+.color8 {
+	background-color: white;
 }
 
 #paleta td {
-	width: 35px;
-	height: 20px;
+	width: 500px !important;
+	height: 40px;
 }
 
 #pincel {
@@ -59,13 +95,12 @@ body {
 	border: medium solid #939;
 }
 
-#btnLimpiar {
-	text-align: center;
+#btnLimpiar, #btnGoma {
 	font-weight: bolder;
 	cursor: pointer;
+	border-bottom: 1px solid transparent;
 }
 
-#btnLimpiar:hover {
-	background-color: #333;
-	color: #FFF;
+#btnLimpiar:hover, #btnGoma:hover {
+	border-bottom: 1px solid #939;
 }
