@@ -10,25 +10,26 @@
 </head>
 
 <body>
-  <h2>TABLERO DE DIBUJO EN JAVASCRIPT</h2>
-  <table width="500" id="paleta" summary="Tabla de selección de colores">
-    <div class="my-row">
-      <div class="color1"></div>
-      <div class="color2"></div>
-      <div class="color3"></div>
-      <div class="color4"></div>
-      <div class="color5"></div>
-      <div class="color6"></div>
-      <div class="color7"></div>
+  <h2>JAVASCRIPT DRAWING BOARD</h2>
+  <table width="500" id="palette" summary="color chart">
+    <div class="myRow">
+      <div id="brush">🖌️ DISABLED</div>
     </div>
-    <div class="my-row">
-      <div id="pincel">🖌️ DESACTIVADO</div>
-      <div id="btnLimpiar">🆑 BORRAR</div>
-      <div id="btnGoma" class="color8">🧽 GOMA</div>
+    <div class="myRow">
+      <div class="color color1"></div>
+      <div class="color color2"></div>
+      <div class="color color3"></div>
+      <div class="color color4"></div>
+      <div class="color color5"></div>
+      <div class="color color6"></div>
+      <div class="color color7"></div>
+    </div>
+    <div class="myRow">
+      <div id="cleanButton">🗑️ LIMPIAR</div>
+      <div id="eraserButton" class="color8">🧽 BORRADOR</div>
     </div>
   </table>
-  <div id="zonadibujo">
-  </div>
+  <div id="drawingArea"></div>
   <script src="script.js"></script>
 </body>
 
