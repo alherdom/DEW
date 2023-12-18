@@ -13,14 +13,16 @@ function stopPainting() {
 }
 // function to paint
 function paint(event) {
-  if (isPainting) { // if the mouse is pressed
+  if (isPainting) {
+    // if the mouse is pressed
     event.target.style.backgroundColor = selectedColor; // cell is painted with selectedColor
   }
 }
 // when the page is loaded
 document.addEventListener("DOMContentLoaded", function () {
   let inputColor = document.querySelector(".color9"); // inputColor is the color picker
-  inputColor.addEventListener("change", function () { // when the color picker changes
+  inputColor.addEventListener("change", function () {
+    // when the color picker changes
     selectedColor = this.value; // selectedColor is the color picked
     resetColorSelection(); // reset the color selection of the palette
     this.classList.add("selected"); // the color picker is selected
@@ -33,7 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
   for (var i = 0; i < cellNumber; i++) {
     const row = document.createElement("tr"); // row is a row of the table
     boardTable.appendChild(row); // row is a child of boardTable
-    for (var j = 0; j < cellNumber; j++) { // for each cell
+    for (var j = 0; j < cellNumber; j++) {
+      // for each cell
       const cell = document.createElement("td"); // cell is a cell of the table
       cell.className = "cell"; // cell has the class cell
       cell.addEventListener("mousemove", paint); // when the mouse moves over the cell, paint
@@ -44,8 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 // closure function to select a color
-function selectColorHandler(selectedIndex) { // selectedIndex is the index of the color
-  return function () { // return a function that will be called when the color is selected
+function selectColorHandler(selectedIndex) {
+  // selectedIndex is the index of the color
+  return function () {
+    // return a function that will be called when the color is selected
     selectedColor = getComputedStyle(this).backgroundColor; // user selected color
     resetColorSelection(); // reset the color selection of the palette
     this.classList.add("selected"); // add selected class
