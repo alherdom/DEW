@@ -21,9 +21,11 @@
             <div id="dateText"></div>
         </div>
         <form onsubmit="addNewTask(event)">
-            <input type="text" name="taskText" autocomplete="off" placeholder="Nueva tarea" class="roundBorder">
+            <input type="text" name="taskText" autocomplete="off" placeholder="Nueva tarea" class="roundBorder" maxlength="40" >
             <button type="submit" class="addTaskButton">+</button>
             <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks()">Ordenar</button>
+            <button type="button" id="deleteCompletedButton" class="orderButton roundBorder">Eliminar</button>
+
         </form>
         <div id="tasksContainer"></div>
         <script src="script.js"></script>
