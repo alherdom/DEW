@@ -111,3 +111,16 @@ input:focus {
     text-decoration: line-through;
     color: var(--dark);
 }
+
+.deleteButton {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: end;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.deleteButton:active {
+    transform: scale(0.8);
+}

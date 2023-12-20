@@ -20,16 +20,34 @@ const addNewTask = (event) => {
   const task = document.createElement("div");
   const date = new Date();
   const dateHour = date.toLocaleString("es", { hour: "numeric" });
-  const dateMinute = date.toLocaleString("es", { minute: "numeric" });
+  // const dateMinute = date.toLocaleString("es", { minute: "numeric" });
+  const dateMinute = date.getMinutes().toString().padStart(2, '0');
+
   task.classList.add("task", "roundBorder");
   task.addEventListener("click", changeTaskState);
-  task.textContent = `${value} ${dateHour}:${dateMinute}`;
+
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "🗑️";
+  deleteButton.classList.add("deleteButton");
+  deleteButton.addEventListener("click", () => removeTask(task));
+  task.appendChild(deleteButton);
+  const taskContent = document.createElement("span");
+  taskContent.textContent = `${value} ${dateHour}:${dateMinute}`;
+  task.appendChild(taskContent);
+
+
   tasksContainer.prepend(task);
   event.target.reset();
 };
+
+const removeTask = (task) => {
+  tasksContainer.removeChild(task);
+};
+
 const changeTaskState = (event) => {
   event.target.classList.toggle("done");
 };
+
 const order = () => {
   const done = [];
   const toDo = [];
@@ -38,6 +56,7 @@ const order = () => {
   });
   return [...toDo, ...done];
 };
+
 const renderOrderedTasks = () => {
   order().forEach((el) => tasksContainer.appendChild(el));
 };
