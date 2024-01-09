@@ -1,0 +1,5 @@
+.table-bordered {
+    border-collapse: collapse;
+    border: 2px solid red;
+    width: 100%;
+}
